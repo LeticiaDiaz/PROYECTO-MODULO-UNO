@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <header>
+        <nav>
+            <ul id="menu">
+              <li><a href="./about.html">Acerca de</a></li>
+              <li><a class="activa" href="">Búsqueda</a></li>
+              <li><a href="./index.html">Inicio</a></li>
+            </ul>
+          </nav>
+        </header>
+    </header>
+    <main>
+<div id="busqueda">
+  <div id="brand">
+    <select onchange="eligeMarca()" id="brandSeleccion" name="brand">
+      <option value="maybelline">Elige una marca</option>
+      <option value="maybelline" selected>Marca</option>
+    </select>
+  </div>
+  <div id="type">
+    <select onchange="eligeProducto()" id="typeSeleccion" name="type">
+      <option value="lipstick">Elige un tipo</option>
+      <option value="lipstick" selected>Tipo</option>
+    </select>
+  </div>
+  <button onclick="ensena()">Mostrar</button>
+</div>
+<div id="resultados">
+
+</div>
+
+    </main>
+    <footer><p>Leticia 2020</p></footer>
+    <script src="index.js"></script>
+</body>
+</html>
+
