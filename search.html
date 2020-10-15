@@ -11,6 +11,7 @@
         <nav>
             <ul id="menu">
               <li><a href="./about.html">Acerca de</a></li>
+              <li><a href="favourite.html">Favoritos</a></li>
               <li><a class="activa" href="">Búsqueda</a></li>
               <li><a href="./index.html">Inicio</a></li>
             </ul>
@@ -21,17 +22,17 @@
 <div id="busqueda">
   <div id="brand">
     <select onchange="eligeMarca()" id="brandSeleccion" name="brand">
-      <option value="maybelline">Elige una marca</option>
       <option value="maybelline" selected>Marca</option>
     </select>
   </div>
   <div id="type">
     <select onchange="eligeProducto()" id="typeSeleccion" name="type">
-      <option value="lipstick">Elige un tipo</option>
       <option value="lipstick" selected>Tipo</option>
     </select>
   </div>
+  <button onclick="genera()">Filtrar</button>
   <button onclick="ensena()">Mostrar</button>
+
 </div>
 <div id="resultados">
 
