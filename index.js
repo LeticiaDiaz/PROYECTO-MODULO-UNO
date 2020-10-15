@@ -6,6 +6,7 @@ let producto = "";
 let listaMarcas = [];
 let opcionesMarca = "";
 let opcionesFinales = "";
+let favorito = "";
 
 eligeMarca();
 eligeProducto();
@@ -13,7 +14,7 @@ eligeProducto();
 function eligeMarca() {
   listaProductos = [];
   opcionesProducto = "";
-  document.getElementById("resultados").innerHTML = "<h1>CARGANDO....</h1>";
+  document.getElementById("resultados").innerHTML = "<h2>CARGANDO...</h2>";
   /* marca = document.getElementById("brandSeleccion").value; */
   console.log(url + "?brand=" + marca);
   fetch(url + "?brand=" + marca)
@@ -108,4 +109,13 @@ function seleccionaMarca(e) {
 function seleccionaTipo(e) {
   producto = e.target.value;
   console.log(producto);
+}
+
+function hacerFavorito(){
+  fetch(url + "?brand=" + marca + "&product_type=" + producto)
+
+  favorito = document.getElementById('favorito').value;
+  document.getElementById('resultado').innerHTML = favorito;
+  localStorage.setItem('favorito', favorito);
+
 }

@@ -37,22 +37,21 @@ main {
     margin: 60px 10px 60px 10px;
 }
 /* -------------------------------------------------------FIN MAIN------------------------------------------------- */
-#fotoUno {
+#portada {
     max-width: 250px;
     justify-content: left;
 }
 
-#fotoDos {
+#portada img {
     max-width: 250px;
-    max-height: 175px;
+}
+
+#portadaDos {
+    max-width: 250px;
     justify-content: left;
 }
 
-#fotoTres {
-    max-width: 250px;
-    max-height: 175px;
-    justify-content: flex-end;
-}
+
 
 
 #portada {
