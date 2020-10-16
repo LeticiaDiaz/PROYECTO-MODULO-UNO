@@ -87,7 +87,7 @@ function ensena() {
         <div id="productoDatos">
         <a href="${datos[i].product_link}" /><h3>${datos[i].name}</h3></a>
         <p>${datos[i].description}</p>
-        <a onclick="hacerFavorito()">Añadir a favorito</a>
+        <a onclick="hacerFavorito(${datos[i].name},${datos[i].image_link},${datos[i].product_link},${datos[i].description})">Añadir a favorito</a>
         </div>
         </div>
         `;
@@ -111,11 +111,10 @@ function seleccionaTipo(e) {
   console.log(producto);
 }
 
-function hacerFavorito(){
-  fetch(url + "?brand=" + marca + "&product_type=" + producto)
-
-  favorito = document.getElementById('favorito').value;
-  document.getElementById('resultado').innerHTML = favorito;
-  localStorage.setItem('favorito', favorito);
+function hacerFavorito(nombre, imagen, link, descripcion){
+  console.log(nombre)
+  console.log(imagen)
+  console.log(link)
+  console.log(descripcion)
 
 }
