@@ -7,9 +7,13 @@ let listaMarcas = [];
 let opcionesMarca = "";
 let opcionesFinales = "";
 let favorito = "";
+let listaEnsenyados = [];
+let favoritos = [];
+let misFavoritos = "";
 
 eligeMarca();
 eligeProducto();
+actualizaFavorito();
 
 function eligeMarca() {
   listaProductos = [];
@@ -66,6 +70,7 @@ function eligeProducto() {
 }
 
 function ensena() {
+  listaEnsenyados = []
   opcionesFinales = "";
   console.log(url + "?brand=" + marca + "&product_type=" + producto);
   fetch(url + "?brand=" + marca + "&product_type=" + producto)
@@ -79,6 +84,13 @@ function ensena() {
           "<h1>No se encuentran resultados</h1>";
       } else {
         for (i = 0; i < datos.length; i++) {
+          listaEnsenyados.push({
+            id: datos[i].id,
+            image: datos[i].image_link,
+            name: datos[i].name,
+            link: datos[i].product_link,
+            description: datos[i].description,
+          });
           opcionesFinales += `
         <div id="producto">
         <div id="productoIMG">
@@ -87,7 +99,7 @@ function ensena() {
         <div id="productoDatos">
         <a href="${datos[i].product_link}" /><h3>${datos[i].name}</h3></a>
         <p>${datos[i].description}</p>
-        <a onclick="hacerFavorito(${datos[i].name},${datos[i].image_link},${datos[i].product_link},${datos[i].description})">Añadir a favorito</a>
+        <a onclick="hacerFavorito(${i})">Añadir a favorito</a>
         </div>
         </div>
         `;
@@ -111,10 +123,35 @@ function seleccionaTipo(e) {
   console.log(producto);
 }
 
-function hacerFavorito(nombre, imagen, link, descripcion){
-  console.log(nombre)
-  console.log(imagen)
-  console.log(link)
-  console.log(descripcion)
 
+function hacerFavorito(i) {
+  console.log(listaEnsenyados[i]);
+  favoritos.push(listaEnsenyados[i]);
+  localStorage.setItem("favoritos", JSON.stringify(favoritos));
+}
+
+function actualizaFavorito (){
+  if (localStorage.getItem('favoritos') == null){
+    localStorage.setItem('favoritos', JSON.stringify(favoritos))
+  }
+  favoritos = JSON.parse(localStorage.getItem('favoritos'))
+  console.log(favoritos)
+}
+
+function ensenyaFavoritos (){
+  actualizaFavorito();
+  for (i = 0; i < favoritos.length; i++) {
+    misFavoritos += `
+  <div id="producto">
+  <div id="productoIMG">
+  <img src="${favoritos[i].image}" alt="${favoritos[i].name}" />
+  </div>
+  <div id="productoDatos">
+  <a href="${favoritos[i].link}" /><h3>${favoritos[i].name}</h3></a>
+  <p>${favoritos[i].description}</p>
+  </div>
+  </div>
+  `;
+  }
+  document.getElementById("misFavoritos").innerHTML = misFavoritos;
 }
