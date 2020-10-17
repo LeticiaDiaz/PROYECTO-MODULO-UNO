@@ -19,7 +19,6 @@ function eligeMarca() {
   listaProductos = [];
   opcionesProducto = "";
   document.getElementById("resultados").innerHTML = "<h2>CARGANDO...</h2>";
-  /* marca = document.getElementById("brandSeleccion").value; */
   console.log(url + "?brand=" + marca);
   fetch(url + "?brand=" + marca)
     .then(function (respuesta) {
@@ -46,7 +45,6 @@ function eligeMarca() {
 function eligeProducto() {
   listaMarcas = [];
   opcionesMarca = "";
-  /* producto = document.getElementById("typeSeleccion").value; */
   console.log(url + "&product_type=" + producto);
   fetch(url + "?product_type=" + producto)
     .then(function (respuesta) {
@@ -70,7 +68,7 @@ function eligeProducto() {
 }
 
 function ensena() {
-  listaEnsenyados = []
+  listaEnsenyados = [];
   opcionesFinales = "";
   console.log(url + "?brand=" + marca + "&product_type=" + producto);
   fetch(url + "?brand=" + marca + "&product_type=" + producto)
@@ -78,7 +76,7 @@ function ensena() {
       return respuesta.json();
     })
     .then(function (datos) {
-      console.log(datos)
+      console.log(datos);
       if (datos.length == 0) {
         document.getElementById("resultados").innerHTML =
           "<h1>No se encuentran resultados</h1>";
@@ -107,7 +105,7 @@ function ensena() {
         document.getElementById("resultados").innerHTML = opcionesFinales;
       }
     });
-} 
+}
 
 function genera() {
   eligeMarca();
@@ -123,22 +121,21 @@ function seleccionaTipo(e) {
   console.log(producto);
 }
 
-
 function hacerFavorito(i) {
   console.log(listaEnsenyados[i]);
   favoritos.push(listaEnsenyados[i]);
   localStorage.setItem("favoritos", JSON.stringify(favoritos));
 }
 
-function actualizaFavorito (){
-  if (localStorage.getItem('favoritos') == null){
-    localStorage.setItem('favoritos', JSON.stringify(favoritos))
+function actualizaFavorito() {
+  if (localStorage.getItem("favoritos") == null) {
+    localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }
-  favoritos = JSON.parse(localStorage.getItem('favoritos'))
-  console.log(favoritos)
+  favoritos = JSON.parse(localStorage.getItem("favoritos"));
+  console.log(favoritos);
 }
 
-function ensenyaFavoritos (){
+function ensenyaFavoritos() {
   actualizaFavorito();
   for (i = 0; i < favoritos.length; i++) {
     misFavoritos += `

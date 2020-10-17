@@ -1,108 +1,147 @@
 header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0px;
-    overflow: hidden;
-    background-color: rgb(58, 201, 194);
+  list-style-type: none;
+  margin: 0px;
+  overflow: hidden;
+  background-color: rgb(58, 201, 194);
 }
 
 nav li {
-    float: right;
+  float: right;
 }
 
 nav li a {
-color: white;
-text-decoration: none;
-display: block;
-text-align: center;
-padding: 15px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 15px;
 }
 
 .activa {
-    background-color: rgb(93, 211, 211) ;
+  background-color: rgb(93, 211, 211);
 }
 
-
 nav li a:hover {
-    background-color: rgb(8, 153, 153);
+  background-color: rgb(8, 153, 153);
 }
 /* ------------------------------------------------------FIN HEADER--------------------------------------------- */
 main {
-    margin: 60px 10px 60px 10px;
+  margin: 60px 10px 60px 10px;
 }
 /* -------------------------------------------------------FIN MAIN------------------------------------------------- */
 #portada {
-    max-width: 250px;
-    justify-content: left;
+  max-width: 250px;
+  justify-content: left;
 }
 
 #portada img {
-    max-width: 250px;
+  max-width: 250px;
+}
+
+@media (max-width: 600px) {
+  #portada img {
+    max-width: 180px;
+  }
 }
 
 #portadaDos {
-    max-width: 250px;
-    justify-content: left;
+  max-width: 250px;
+  justify-content: left;
 }
 
-
-
-
 #portada {
-    display: flex;
+  display: flex;
 }
 
 #introduccion {
-    color: rgb(8, 153, 153);
-    margin: 20px;
-
+  color: rgb(8, 153, 153);
+  margin: 20px;
+  text-align: justify;
 }
+
+#introduccion a {
+  text-decoration: none;
+  color: rgb(8, 153, 153);
+}
+
+#introduccion a:hover {
+  color: rgb(153, 131, 8);
+}
+
+@media (max-width: 600px) {
+  #introduccion {
+    margin: 3px;
+  }
+}
+
 /* ------------------------------------------------------FIN INDEX---------------------------------------------------- */
 
 #busqueda {
-    display: flex;
+  display: flex;
 }
 #producto {
-    display: flex;
-
+  display: flex;
 }
 
 #producto img {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 #productoDatos {
-    margin: 10px;
+  margin: 10px;
 }
 
 #productoDatos a {
-    text-decoration: none;
-    color: rgb(58, 201, 194)
+  text-decoration: none;
+  color: rgb(58, 201, 194);
 }
 
 #productoDatos a:hover {
-    color: rgb(8, 153, 153);
+  color: rgb(8, 153, 153);
+}
+
+@media (max-width: 600px) {
+  #producto img {
+    max-width: 150px;
+  }
+  #producto p {
+    font-size: smaller;
+  }
+  #productoDatos a {
+    font-size: smaller;
+  }
+  #brandSeleccion {
+    max-width: 99%;
+  }
+  #brand {
+    max-width: 40%;
+  }
 }
 
 /* ------------------------------------------------------FIN SEARCH--------------------------------------------------- */
+
+#despedida {
+  color: rgb(8, 153, 153);
+  margin: 20px;
+}
+
 footer {
-    text-align: right;
-    position: fixed;
-    color: white;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgb(58, 201, 194);
+  text-align: right;
+  position: fixed;
+  color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(58, 201, 194);
 }
 
 footer p {
-    margin: 10px;
+  margin: 10px;
 }
-
-
